@@ -1,24 +1,33 @@
-import type { AppProps } from 'next/app'
-import { Analytics } from '@vercel/analytics/react'
-import type { LayoutProps } from '@vercel/examples-ui/layout'
+import "@/styles/globals.css";
+import type { AppProps } from "next/app";
+import { Analytics } from "@vercel/analytics/react";
+import { Provider as RWBProvider } from "react-wrap-balancer";
+import cx from "classnames";
+import localFont from "@next/font/local";
+import { Inter } from "@next/font/google";
 
-import { getLayout } from '@vercel/examples-ui'
+const sfPro = localFont({
+  src: "../styles/SF-Pro-Display-Medium.otf",
+  variable: "--font-sf",
+});
 
-import '@vercel/examples-ui/globals.css'
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+});
 
-function App({ Component, pageProps }: AppProps) {
-  const Layout = getLayout<LayoutProps>(Component)
-
+export default function MyApp({
+  Component,
+  pageProps: { ...pageProps },
+}: AppProps) {
   return (
-    <Layout
-      title="ai-chatgpt"
-      path="solutions/ai-chatgpt"
-      description="ai-chatgpt"
-    >
-      <Component {...pageProps} />
+    <div>
+      <RWBProvider>
+        <main className={cx(sfPro.variable, inter.variable)}>
+          <Component {...pageProps} />
+        </main>
+      </RWBProvider>
       <Analytics />
-    </Layout>
-  )
+    </div>
+  );
 }
-
-export default App

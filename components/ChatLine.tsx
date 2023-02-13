@@ -1,6 +1,5 @@
 import Balancer from "react-wrap-balancer";
 
-// wrap Balancer to remove type errors :( - @TODO - fix this ugly hack
 const BalancerWrapper = (props: any) => <Balancer {...props} />;
 
 export type Message = {
@@ -43,7 +42,7 @@ export function ChatLine({ who = "bot", message }: Message) {
   if (!message) {
     return null;
   }
-  const formatteMessage = convertNewLines(message);
+  const formattedMessage = convertNewLines(message);
   const cl = who == "bot" ? "font- font-semibold " : "text-gray-400";
   return (
     <div
@@ -52,15 +51,15 @@ export function ChatLine({ who = "bot", message }: Message) {
       }
     >
       <BalancerWrapper>
-        <div className="float-right mb-5 rounded-lg bg-white px-4 py-5 shadow-lg ring-1 ring-zinc-100 sm:px-6">
+        <div className="float-right mb-5 rounded-lg bg-white px-4 py-5 shadow-lg ring-1 ring-zinc-100 sm:px-6 max-w-sm">
           <div className="flex space-x-3">
             <div className="flex-1 gap-4">
               <p className="font-large text-xxl text-gray-900">
                 <a href="#" className="hover:underline">
-                  {who == "bot" ? "AI" : "You"}
+                  {who == "bot" ? "Bucky:" : ""}
                 </a>
               </p>
-              <p className={"text " + cl}>{formatteMessage}</p>
+              <p className={"text " + cl}><br /> {formattedMessage}</p>
             </div>
           </div>
         </div>

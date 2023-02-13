@@ -3,13 +3,13 @@ import { Button } from "./Button";
 import { type Message, ChatLine, LoadingChatLine } from "./ChatLine";
 import { useCookies } from "react-cookie";
 
-const COOKIE_NAME = "nextjs-example-ai-chat-gpt3";
+const COOKIE_NAME = "bucky-ai-cookie";
 
 // default first message to display in UI (not necessary to define the prompt)
 export const initialMessages: Message[] = [
   {
     who: "bot",
-    message: "Hi! I’m A friendly AI assistant. Ask me anything!",
+    message: "Hi, I'am Bucky. I've read UW-Madison documents more than a thousand times. \n Ask me anything!",
   },
 ];
 
@@ -66,6 +66,7 @@ export function Chat() {
       { message: message, who: "user" } as Message,
     ];
     setMessages(newMessages);
+
     const last10messages = newMessages.slice(-10);
 
     const response = await fetch("/api/chat", {
@@ -78,6 +79,7 @@ export function Chat() {
         user: cookie[COOKIE_NAME],
       }),
     });
+
     const data = await response.json();
 
     // strip out white spaces from the bot message
@@ -91,7 +93,7 @@ export function Chat() {
   };
 
   return (
-    <div className="rounded-2xl border-zinc-100  lg:border lg:p-6">
+    <div className="rounded-2xl border-zinc-100  lg:border lg:p-6 min-w-full">
       {messages.map(({ message, who }, index) => (
         <ChatLine key={index} who={who} message={message} />
       ))}
