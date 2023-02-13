@@ -21,9 +21,9 @@ export default function MyApp({
   pageProps: { ...pageProps },
 }: AppProps) {
   return (
-    <div>
+    <div className="h-full w-full">
       <RWBProvider>
-        <main className={cx(sfPro.variable, inter.variable)}>
+        <main className={cx(sfPro.variable, inter.variable, "h-full w-full")}>
           <Component {...pageProps} />
         </main>
       </RWBProvider>
