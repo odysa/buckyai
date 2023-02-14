@@ -55,8 +55,8 @@ const InputMessage = ({ input, setInput, sendMessage }: any) => {
             fill="currentColor"
           ></path>
           <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+            fillRule="evenodd"
+            clipRule="evenodd"
             d="M8 16C8 15.4477 8.44772 15 9 15H17C17.5523 15 18 15.4477 18 16C18 16.5523 17.5523 17 17 17H9C8.44772 17 8 16.5523 8 16Z"
             fill="currentColor"
           ></path>
