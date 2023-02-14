@@ -12,7 +12,7 @@ export function Intro() {
       >
         <Balancer>
           <span>Bucky AI -- </span>
-          <span>Virtual Advisor with&nbsp;</span>
+          <span>Q&A Bot with&nbsp;</span>
           <span className="bg-co bg-gradient-to-r from-blue-500 via-green-600 to-indigo-500 bg-clip-text text-transparent">
             Intelligence
           </span>

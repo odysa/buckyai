@@ -9,7 +9,7 @@ export const initialMessages: Message[] = [
   {
     who: "bot",
     message:
-      "Hi, I'am Bucky, an AI advisor. I've read UW-Madison documents more than a thousand times.\nAsk me anything about the college!\n\nExample:\nHow many students and faculties are at UW-Madison?\nWhere and when can I swim?\nList professors doing database research.\nI want a job. Help!",
+      "Hi, I'am Bucky, an Q&A bot. I've read UW-Madison documents more than a thousand times.\nAsk me anything about the college!\n\nExample:\nHow many students and faculties are at UW-Madison?\nWhere and when can I swim?\nList professors doing database research.\nI want a job. Help!",
   },
 ];
 
