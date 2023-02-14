@@ -9,7 +9,7 @@ export const initialMessages: Message[] = [
   {
     who: "bot",
     message:
-      "Hi, I'am Bucky, an AI advisor. I've read UW-Madison documents more than a thousand times. \n Ask me anything about the college!",
+      "Hi, I'am Bucky, an AI advisor. I've read UW-Madison documents more than a thousand times.\nAsk me anything about the college!\n\nExample:\nHow many students and faculties are at UW-Madison?\nWhere and when can I swim?\nList professors doing database research.\nI want a job. Help!",
   },
 ];
 
@@ -17,7 +17,7 @@ const InputMessage = ({ input, setInput, sendMessage }: any) => {
   return (
     <div className="flex w-full justify-start">
       <textarea
-        className="h-28 w-full resize-none border-gray-300 hover:border-gray-400"
+        className="h-28 w-full resize-none rounded-md border-gray-300 hover:border-gray-400"
         onKeyDown={(e) => {
           if (e.key === "Enter") {
             e.preventDefault();
