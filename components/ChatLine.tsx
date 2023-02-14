@@ -46,7 +46,9 @@ function extractSources(text: string): {
     /http[s]?:\/\/(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+/g;
   const split = text.split("SOURCES:");
 
-  const urls = (split.length > 1 && split[1].match(urlPattern)) || [];
+  const urls = ((split.length > 1 && split[1].match(urlPattern)) || []).map(
+    (url) => url.replace(",", ""),
+  );
   const hasUrls = urls && urls.length > 0;
 
   const content = hasUrls ? split[0].trim() : text.trim();

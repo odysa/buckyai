@@ -9,7 +9,7 @@ export const initialMessages: Message[] = [
   {
     who: "bot",
     message:
-      "Hi, I'am Bucky, an AI advisor. I've read UW-Madison documents more than a thousand times. \n Ask me anything about the college!",
+      "Hi, I'am Bucky, an AI advisor. I've read UW-Madison documents more than a thousand times.\nAsk me anything about the college!\n\nExample:\nHow many students and faculties are at UW-Madison?\nWhere and when can I swim?\nList professors doing database research.\nI want a job. Help!",
   },
 ];
 
@@ -17,7 +17,7 @@ const InputMessage = ({ input, setInput, sendMessage }: any) => {
   return (
     <div className="flex w-full justify-start">
       <textarea
-        className="h-28 w-full resize-none border-gray-300 hover:border-gray-400"
+        className="h-28 w-full resize-none rounded-md border-gray-300 hover:border-gray-400"
         onKeyDown={(e) => {
           if (e.key === "Enter") {
             e.preventDefault();
@@ -55,8 +55,8 @@ const InputMessage = ({ input, setInput, sendMessage }: any) => {
             fill="currentColor"
           ></path>
           <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+            fillRule="evenodd"
+            clipRule="evenodd"
             d="M8 16C8 15.4477 8.44772 15 9 15H17C17.5523 15 18 15.4477 18 16C18 16.5523 17.5523 17 17 17H9C8.44772 17 8 16.5523 8 16Z"
             fill="currentColor"
           ></path>
