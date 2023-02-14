@@ -15,8 +15,7 @@ export default async function handler(req: NextRequest) {
   }
 
   const res = await fetch(
-    "https://bucky-ai-production.up.railway.app/qa" +
-      encodeURI("?q=" + question),
+    process.env.DOMAIN + "/qa" + encodeURI("?q=" + question),
     {
       method: "GET",
     },
