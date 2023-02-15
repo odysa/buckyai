@@ -9,7 +9,7 @@ export const initialMessages: Message[] = [
   {
     who: "bot",
     message:
-      "Hi, I'am Bucky, an Q&A bot. I've read UW-Madison documents more than a thousand times.\nAsk me anything about the college!\n\nExample:\nHow many students and faculties are at UW-Madison?\nWhere and when can I swim?\nList professors doing database research.\nI want a job. Help!",
+      "Hi, I'am Bucky, an Q&A bot. I've read UW-Madison documents more than a thousand times.\nAsk me anything about the college!\n\nExample:\nTell me more about LGBT movement at UW-Madison.\nWhere and when can I swim?\nList professors doing database research.\nWrite two creative and unique verses about yourself, in the musical Hamilton's style, mimicking \"my shot\"",
   },
 ];
 
@@ -31,7 +31,7 @@ const InputMessage = ({ input, setInput, sendMessage }: any) => {
           setInput(target.value);
         }}
         value={input}
-        placeholder="I am looking for a job. Need help."
+        placeholder="Where and when can I swim?"
       ></textarea>
       <button
         className="relative -left-10"
@@ -101,11 +101,17 @@ export function Chat() {
         user: cookie[COOKIE_NAME],
       }),
     });
+    let botNewMessage = "";
+    if (response.status != 200) {
+      botNewMessage = "Failed to fetch data.";
+    }
 
     const data = await response.json();
-
+    if (data.text == null) {
+      botNewMessage = "Failed to get answer.";
+    }
     // strip out white spaces from the bot message
-    const botNewMessage = data.text.trim();
+    botNewMessage = data.text.trim();
 
     setMessages([
       ...newMessages,

@@ -5,7 +5,7 @@ import GitHub from "@/components/icons/github";
 
 export function Intro() {
   return (
-    <div className="mt-2">
+    <div className="mt-1">
       <motion.h1
         className="w-[1024px] bg-gradient-to-br from-black to-stone-500 bg-clip-text text-center text-4xl font-bold tracking-[-0.02em] drop-shadow-sm md:text-4xl md:leading-[5rem]"
         variants={FADE_DOWN_ANIMATION_VARIANTS}
@@ -22,7 +22,7 @@ export function Intro() {
         href="https://github.com/odysa/buckyai"
         target="_blank"
         rel="noreferrer"
-        className="mx-auto mb-5 flex max-w-fit items-center justify-center space-x-2 overflow-hidden rounded-full border border-black bg-white px-7 py-2 text-black transition-colors hover:bg-black hover:text-white"
+        className="mx-auto mb-3 flex max-w-fit items-center justify-center space-x-2 overflow-hidden rounded-full border border-black bg-white px-5 py-2 text-black transition-colors hover:bg-black hover:text-white"
       >
         <GitHub className="h-5 w-5" />
         <p className="text-sm font-semibold">Star on GitHub</p>

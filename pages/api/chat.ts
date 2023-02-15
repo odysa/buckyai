@@ -26,7 +26,10 @@ export default async function handler(req: NextRequest) {
       JSON.stringify({ text: "Failed to fetch answer" }),
       {
         status: 400,
-        headers: { "content-type": "application/json" },
+        headers: {
+          "content-type": "application/json",
+          "Cache-Control": "s-maxage=1, stale-while-revalidate",
+        },
       },
     );
   }
