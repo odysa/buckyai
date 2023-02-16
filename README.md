@@ -1,7 +1,8 @@
 # BuckyAI
 
 BuckyAI is a question-answering chatbot that is designed to answer any questions about the University of Wisconsin-Madison. The chatbot is powered by Next.js and OpenAI, and it provides a fast and intuitive interface for finding answers to commonly asked questions.
-Getting Started
+
+## Getting Started
 
 To get started with BuckyAI, you will need to clone the repository and configure the chatbot.
 Prerequisites
@@ -11,7 +12,11 @@ To use BuckyAI, you will need:
 - Node.js 12 or later installed
 - An OpenAI API key
 
-Installing
+## Deployment
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fodysa%2Fbuckyai)
+
+## Installing
 
 Clone the repository and then run the following command to install the required dependencies:
 
